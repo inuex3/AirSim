@@ -39,7 +39,7 @@ static constexpr int MESSAGE_THROTTLE = 100;
 
 using namespace msr::airlib;
 
-msr::airlib::MultirotorRpcLibClient client;
+msr::airlib::MultirotorRpcLibClient client(getenv("WSL_HOST_IP"));
 
 void cbLocalPose(ConstPosesStampedPtr& msg)
 {
